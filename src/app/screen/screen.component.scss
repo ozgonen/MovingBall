@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  border: 1px solid tomato;
+  border-right: none;
+  justify-content: center;
+  align-items: center;
+
+}
+.ball {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: tomato;
+  transition: 0.5s all;
+}
