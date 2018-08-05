@@ -6,21 +6,21 @@ import {horizontalSteps, moveAmount, verticalSteps} from '../consts/consts';
   selector: 'app-screen',
   template: `
     <div
-      [ngStyle]="ballDirections"
+      [ngStyle]="ballStyle"
       class="ball"
     ></div>
   `,
   styleUrls: ['./screen.component.scss']
 })
 export class ScreenComponent {
-  ballDirections = {
+  ballStyle = {
     marginTop: '0',
     marginLeft: '0'
   };
 
   @Input() set moveBall(value: BallDirections) {
     if (value) {
-      this.ballDirections = this.moveTheBall(value);
+      this.ballStyle = this.moveTheBall(value);
     }
   }
 
@@ -30,7 +30,7 @@ export class ScreenComponent {
    * @param value
    */
   private moveTheBall(value: BallDirections) {
-    let {marginTop, marginLeft} = this.ballDirections;
+    let {marginTop, marginLeft} = this.ballStyle;
     const top: number = parseInt(marginTop, 10);
     const left: number = parseInt(marginLeft, 10);
     switch (value.direction) {
